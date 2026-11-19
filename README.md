@@ -1,6 +1,6 @@
 # Claude Topo
 
-A theme for Claude: topographic contour art on a black background. Claude-orange lines trace the elevation "highs and lows of an imaginary landscape. The lines pack tight and burn pale peach on steep peaks, and spread wide in deep rust across valleys and plains. Every fifth line is a heavier index contour, as on a survey map.
+A theme for Claude: topographic contour art on a black background. Claude-orange lines trace the elevation "highs and lows" of an imaginary landscape. The lines are closely spaced and burn pale peach on steep peaks, and spread wide in deep rust across valleys and plains. Every fifth line is a heavier index contour, as on a survey map.
 
 ![Claude Topo](docs/preview.png)
 
