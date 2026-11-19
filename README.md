@@ -6,11 +6,11 @@ A theme for Claude: topographic contour art on a black background. Claude-orange
 
 ## The ASCII spirit
 
-On the desktop app, a little spirit made of characters wanders the map, walking slow circles as it drifts. Within its reach the contour lines turn gently into ASCII (`. : - +`, with `CLAUDE` along the brightest lines), a few characters flicker as it passes, and its wake fades back into lines over a few seconds. Move your pointer over the background and it stirs the map the same way.
+On the desktop app, a little spirit wanders the map in loose, squiggly loops, and the contour lines it passes turn into ASCII. Each stretch of line becomes the character shaped most like it: a line low in its cell becomes `_`, a slope `/` or `\\`, a steep one `|`, stacked lines `=`, a bend `(` or `)`, a little ring on a peak `o`, a line just grazing `.` or `,`. The bare ground stays bare, so there's no grid. The lines dissolve into type cell by cell, and the spirit leaves a long, wide wake that slowly turns back into lines. Move your pointer over the background and it stirs the map the same way.
 
 ![The ASCII spirit](docs/spirit.gif)
 
-It runs as a GPU shader (`hooks/spirit.ts`). The mobile app, Reduce Motion, and machines that can't run it show the still map. The knobs at the top of `hooks/spirit.ts` set its reach, the size of its circles, and the character cell size.
+It runs as a GPU shader (`hooks/spirit.ts`). The mobile app, Reduce Motion, and machines that can't run it show the still map. The knobs at the top of `hooks/spirit.ts` set its reach, how wide it loops, how long its wake lingers, and the character cell size. The character shapes live in `tools/font.js`; after changing them, run `node tools/match.js` to rebuild the matcher in `hooks/spirit.ts`.
 
 It themes the Claude desktop and mobile apps (colours, accents and the backdrop). The terminal draws no theme, so nothing changes there. It's dark-only: the map is drawn on black.
 

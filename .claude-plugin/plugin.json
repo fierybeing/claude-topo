@@ -1,6 +1,6 @@
 {
   "name": "ember-topo",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Topographic contour art: Claude-orange elevation lines on a black background.",
   "author": { "name": "fierybeing" },
   "license": "MIT",
