@@ -1,5 +1,5 @@
 {
-  "name": "claude-topo",
+  "name": "ember-topo",
   "owner": { "name": "fierybeing" },
-  "plugins": [{ "name": "claude-topo", "source": "./" }]
+  "plugins": [{ "name": "ember-topo", "source": "./" }]
 }

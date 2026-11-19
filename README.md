@@ -1,8 +1,16 @@
-# Claude Topo
+# Ember Topo
 
 A theme for Claude: topographic contour art on a black background. Claude-orange lines trace the elevation "highs and lows" of an imaginary landscape. The lines are closely spaced and burn pale peach on steep peaks, and spread wide in deep rust across valleys and plains. Every fifth line is a heavier index contour, as on a survey map.
 
-![Claude Topo](docs/preview.png)
+![Ember Topo](docs/preview.png)
+
+## The ASCII spirit
+
+On the desktop app, a little spirit made of characters wanders the map, walking slow circles as it drifts. Within its reach the contour lines turn gently into ASCII (`. : - +`, with `CLAUDE` along the brightest lines), a few characters flicker as it passes, and its wake fades back into lines over a few seconds. Move your pointer over the background and it stirs the map the same way.
+
+![The ASCII spirit](docs/spirit.gif)
+
+It runs as a GPU shader (`hooks/spirit.ts`). The mobile app, Reduce Motion, and machines that can't run it show the still map. The knobs at the top of `hooks/spirit.ts` set its reach, the size of its circles, and the character cell size.
 
 It themes the Claude desktop and mobile apps (colours, accents and the backdrop). The terminal draws no theme, so nothing changes there. It's dark-only: the map is drawn on black.
 
@@ -10,12 +18,12 @@ It themes the Claude desktop and mobile apps (colours, accents and the backdrop)
 
 ## Install
 
-In the Claude desktop app: click **+** next to the prompt box, then **Plugins**, **Add marketplace** with `fierybeing/claude-topo`, then **Add plugin**.
+In the Claude desktop app: click **+** next to the prompt box, then **Plugins**, **Add marketplace** with `fierybeing/claude-topo`, then **Add plugin** (it's listed as **ember-topo**).
 
 Or from a shell:
 
 ```bash
-claude plugin install claude-topo --marketplace fierybeing/claude-topo
+claude plugin install ember-topo --marketplace fierybeing/claude-topo
 ```
 
 Start a new session and the theme paints.
@@ -23,11 +31,11 @@ Start a new session and the theme paints.
 ## Update
 
 ```bash
-claude plugin marketplace update claude-topo
+claude plugin marketplace update ember-topo
 ```
 
 ```bash
-claude plugin update claude-topo@claude-topo
+claude plugin update ember-topo@ember-topo
 ```
 
 ## If the theme doesn't show up

@@ -5,7 +5,7 @@ import { SCENE } from './scene'
 
 // Black ground, Claude-orange contour lines. Dark only: the map is drawn on black.
 const { theme, problems } = makeColors({
-  label: 'Claude Topo',
+  label: 'Ember Topo',
   only: 'dark',
   roles: { accent: '#d97757', danger: '#e5534b', success: '#3fb68b', warning: '#d9a441', pro: '#e48c6c' },
   dark: {
@@ -26,7 +26,7 @@ const { theme, problems } = makeColors({
 // The knob for how much the map shows through behind panels: lower opacity = more map.
 const LOOK: ThemeSetArgs = {
   colors: theme,
-  backdrop: { scene: 'claude-topo', glass: { blur: 4, opacity: 0.7 } },
+  backdrop: { scene: 'ember-topo', glass: { blur: 4, opacity: 0.7 } },
 }
 
 export const register: Register = on => {
@@ -43,11 +43,16 @@ export const register: Register = on => {
 
   on('ui.render', { component: 'Backdrop' }, ($, e, next) => {
     // Only draw when the standing theme is ours: another theme mod may have set the look.
-    if (e.props.plugin !== 'claude-topo' || (e.surface !== 'desktop' && e.surface !== 'mobile')) {
+    if (e.props.plugin !== 'ember-topo' || (e.surface !== 'desktop' && e.surface !== 'mobile')) {
       return next(e)
     }
-    const { Svg } = $.ui.resolve(e)
+    const { Shader, Svg } = $.ui.resolve(e)
 
-    return <Svg source={SCENE} alt="Topographic contour lines in Claude orange on black" isInteractive />
+    // On desktop the ASCII spirit wanders the map; elsewhere the map shows on its own.
+    return (
+      <Shader module="./spirit.ts">
+        <Svg source={SCENE} alt="Topographic contour lines in Claude orange on black" isInteractive />
+      </Shader>
+    )
   })
 }
